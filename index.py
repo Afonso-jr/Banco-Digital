@@ -55,7 +55,7 @@ while True:
             print("\n Operação falhou! Número maximo de saques excedido!")
         
         elif valor_sacado > 0:
-            print(f"Saque realizado! O valor de R$ {valor_sacado:.2f} já está disponivel em sua conta!")
+            print(f"\n Saque realizado! O valor de R$ {valor_sacado:.2f} foi liberado!")
             saldo -= valor_sacado
             extrato += f"\n Saque: R$ {valor_sacado:.2f} \n"
             numero_saques += 1
