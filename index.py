@@ -9,6 +9,9 @@ Escolha umas das opções abaixo:
 [2] Sacar
 [3] Extrato
 [4] Sair
+[5] Adiconar usúario
+[6] Listar contas
+[7] Listar usuarios
 
 => '''
 
