@@ -1,3 +1,5 @@
+import textwrap
+
 menu = '''
 ###### Olá! Seja bem vindo ao Banco AJR! ######
 
