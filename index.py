@@ -1,3 +1,12 @@
+# Bem vindo ao Banco Digital Ajr!
+# Regras:
+# Permitido depositar valores diversos
+# Permitido somente 3 saques diários
+# Permitido saque maximo de R$ 500,00
+# Criação de usuario necessário: Nome, Data de Nascimento, CPF e Endereço
+# Não pode cadastrar 2 usuários com o mesmo CPFq
+
+
 import textwrap
 
 menu = '''
