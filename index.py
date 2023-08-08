@@ -6,7 +6,6 @@
 # Criação de usuario necessário: Nome, Data de Nascimento, CPF e Endereço
 # Não pode cadastrar 2 usuários com o mesmo CPFq
 
-
 import textwrap
 
 def menu():
@@ -35,7 +34,8 @@ def depositar(saldo, valor_deposito, extrato, /):
 
     return saldo, extrato
 
-#saque está fora da regra, ainda não aceita somente 3 saques
+# Corrigir
+# Saque está fora da regra, ainda não aceita somente 3 saques
 def sacar(*, saldo, valor_sacado, extrato, limite_valor_saque, numero_de_saques, limite_numero_saques):
     excedeu_saldo = valor_sacado > saldo
     excedeu_limite = valor_sacado > limite_valor_saque
@@ -53,10 +53,10 @@ def sacar(*, saldo, valor_sacado, extrato, limite_valor_saque, numero_de_saques,
     elif valor_sacado > 0:
         saldo -= valor_sacado
         extrato += f"Saque:\t\tR$ {valor_sacado:.2f}\n"
-        numero_de_saques += 1  
+        numero_de_saques += 2  
         print("\n=== Saque realizado com sucesso! ===")
         print(f"{numero_de_saques}")
-     
+         
     else:
         print("\n### Operação falhou! O valor informado é inválido. ###")
 
@@ -98,10 +98,8 @@ def main():
                 limite_valor_saque = limite_valor_saque,
                 numero_de_saques = numero_de_saques,
                 limite_numero_saques = LIMITE_SAQUES,
-            )
-            
+            )            
 
-            
         elif opção == "3":
             #formatação para a saida do valor em "R$ 1500,11"
             print("""\n ================= Extrato =================""")
