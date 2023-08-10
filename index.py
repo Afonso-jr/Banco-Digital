@@ -4,7 +4,7 @@
 # Permitido somente 3 saques diários
 # Permitido maximo de R$ 500,00 por saque 
 # Criação de usuario necessário: Nome, Data de Nascimento, CPF e Endereço
-# Não pode cadastrar 2 usuários com o mesmo CPFq
+# Não pode cadastrar 2 usuários com o mesmo CPF
 
 import textwrap
 
@@ -53,7 +53,7 @@ def sacar(*, saldo, valor_sacado, extrato, limite_valor_saque, numero_de_saques,
     elif valor_sacado > 0:
         saldo -= valor_sacado
         extrato += f"Saque:\t\tR$ {valor_sacado:.2f}\n"
-        numero_de_saques += 2  
+        numero_de_saques += 1  
         print("\n=== Saque realizado com sucesso! ===")
         print(f"{numero_de_saques}")
          
