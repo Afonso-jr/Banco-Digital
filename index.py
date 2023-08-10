@@ -34,8 +34,6 @@ def depositar(saldo, valor_deposito, extrato, /):
 
     return saldo, extrato
 
-# Corrigir
-# Saque está fora da regra, ainda não aceita somente 3 saques
 def sacar(*, saldo, valor_sacado, extrato, limite_valor_saque, numero_de_saques, limite_numero_saques):
     excedeu_saldo = valor_sacado > saldo
     excedeu_limite = valor_sacado > limite_valor_saque
@@ -48,19 +46,18 @@ def sacar(*, saldo, valor_sacado, extrato, limite_valor_saque, numero_de_saques,
         print("\n### Operação falhou! O valor do saque excede o limite. ###")
 
     elif excedeu_saques:
-        print("\n### Operação falhou! Número máximo de saques excedido. ###")
+        print("\n### Operação falhou! Número máximo de 3 saques diários excedido. ###")
 
     elif valor_sacado > 0:
         saldo -= valor_sacado
         extrato += f"Saque:\t\tR$ {valor_sacado:.2f}\n"
         numero_de_saques += 1  
-        print("\n=== Saque realizado com sucesso! ===")
-        print(f"{numero_de_saques}")
+        print(f"\n=== O valor de R$ {valor_sacado:.2f} já pode ser sacado! ===")
          
     else:
         print("\n### Operação falhou! O valor informado é inválido. ###")
 
-    return saldo, extrato
+    return saldo, extrato, numero_de_saques
 
 def main():
     LIMITE_SAQUES = 3
@@ -91,7 +88,7 @@ def main():
 
             valor_sacado = float(input("Excelente! Qual o valor do saque? "))
            
-            saldo, extrato = sacar(
+            saldo, extrato, numero_de_saques = sacar(
                 saldo = saldo,
                 valor_sacado = valor_sacado,
                 extrato = extrato,
