@@ -3,8 +3,11 @@
 # Permitido depositar valores diversos
 # Permitido somente 3 saques diários
 # Permitido maximo de R$ 500,00 por saque 
-# Criação de usuario necessário: Nome, Data de Nascimento, CPF e Endereço
-# Não pode cadastrar 2 usuários com o mesmo CPF
+
+# Proximas atualizações:
+# Cadastro de conta
+# Cadastro de usuario - Necessário: Nome, Data de Nascimento, CPF e Endereço
+# Cadastro de 2 usuários com o mesmo CPF
 
 import textwrap
 
