@@ -5,7 +5,8 @@
 # Permitido maximo de R$ 500,00 por saque 
 # Cadastro de conta
 # Cadastro de usuario - Necessário: Nome, Data de Nascimento, CPF e Endereço
-# Cadastro de 2 usuários com o mesmo CPF
+# É possivel cadastrar 1 Usuário por CPF
+# É possivel cadastrar varias contas usando o mesmo CPF
 
 import textwrap
 
