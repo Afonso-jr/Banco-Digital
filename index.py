@@ -67,7 +67,7 @@ class Conta:
         excedeu_saldo = valor > saldo
 
         if excedeu_saldo:
-            print("\n@@@ Operação falhou! Você não tem saldo suficiente. @@@")
+            print("\n### Operação falhou! Você não tem saldo suficiente. ###")
 
         elif valor > 0:
             self._saldo -= valor
@@ -75,7 +75,7 @@ class Conta:
             return True
 
         else:
-            print("\n@@@ Operação falhou! O valor informado é inválido. @@@")
+            print("\n### Operação falhou! O valor informado é inválido. ###")
 
         return False
 
@@ -84,7 +84,7 @@ class Conta:
             self._saldo += valor
             print("\n=== Depósito realizado com sucesso! ===")
         else:
-            print("\n@@@ Operação falhou! O valor informado é inválido. @@@")
+            print("\n### Operação falhou! O valor informado é inválido. ###")
             return False
 
         return True
@@ -104,10 +104,10 @@ class ContaCorrente(Conta):
         excedeu_saques = numero_saques >= self._limite_saques
 
         if excedeu_limite:
-            print("\n@@@ Operação falhou! O valor do saque excede o limite. @@@")
+            print("\n### Operação falhou! O valor do saque excede o limite. ###")
 
         elif excedeu_saques:
-            print("\n@@@ Operação falhou! Número máximo de saques excedido. @@@")
+            print("\n### Operação falhou! Número máximo de saques excedido. ###")
 
         else:
             return super().sacar(valor)
@@ -195,7 +195,7 @@ def filtrar_cliente(cpf, clientes):
 
 def recuperar_conta_cliente(cliente):
     if not cliente.contas:
-        print("\n@@@ Cliente não possui conta! @@@")
+        print("\n### Cliente não possui conta! ###")
         return
 
     # FIXME: não permite cliente escolher a conta
@@ -206,7 +206,7 @@ def depositar(clientes):
     cliente = filtrar_cliente(cpf, clientes)
 
     if not cliente:
-        print("\n@@@ Cliente não encontrado! @@@")
+        print("\n### Cliente não encontrado! ###")
         return
 
     valor = float(input("Informe o valor do depósito: "))
@@ -223,7 +223,7 @@ def sacar(clientes):
     cliente = filtrar_cliente(cpf, clientes)
 
     if not cliente:
-        print("\n@@@ Cliente não encontrado! @@@")
+        print("\n### Cliente não encontrado! ###")
         return
 
     valor = float(input("Informe o valor do saque: "))
@@ -240,7 +240,7 @@ def exibir_extrato(clientes):
     cliente = filtrar_cliente(cpf, clientes)
 
     if not cliente:
-        print("\n@@@ Cliente não encontrado! @@@")
+        print("\n### Cliente não encontrado! ###")
         return
 
     conta = recuperar_conta_cliente(cliente)
@@ -255,10 +255,10 @@ def exibir_extrato(clientes):
         extrato = "Não foram realizadas movimentações."
     else:
         for transacao in transacoes:
-            extrato += f"\n{transacao['tipo']}:\n\tR$ {transacao['valor']:.2f}"
+            extrato += f"\n{transacao['tipo']}:\tR$ {transacao['valor']:.2f}"
 
     print(extrato)
-    print(f"\nSaldo:\n\tR$ {conta.saldo:.2f}")
+    print(f"\nSaldo:\tR$ {conta.saldo:.2f}")
     print("==========================================")
 
 def criar_cliente(clientes):
@@ -266,7 +266,7 @@ def criar_cliente(clientes):
     cliente = filtrar_cliente(cpf, clientes)
 
     if cliente:
-        print("\n@@@ Já existe cliente com esse CPF! @@@")
+        print("\n### Já existe cliente com esse CPF! ###")
         return
 
     nome = input("Informe o nome completo: ")
@@ -284,7 +284,7 @@ def criar_conta(numero_conta, clientes, contas):
     cliente = filtrar_cliente(cpf, clientes)
 
     if not cliente:
-        print("\n@@@ Cliente não encontrado, fluxo de criação de conta encerrado! @@@")
+        print("\n### Cliente não encontrado, fluxo de criação de conta encerrado! ###")
         return
 
     conta = ContaCorrente.nova_conta(cliente=cliente, numero=numero_conta)
@@ -328,6 +328,6 @@ def main():
             break
 
         else:
-            print("\n@@@ Operação inválida, por favor selecione novamente a operação desejada. @@@")
+            print("\n### Operação inválida, por favor selecione novamente a operação desejada. ###")
 
 main()
