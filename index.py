@@ -1,7 +1,8 @@
 # Bem vindo ao Banco Digital Ajr!
 # Regras:
-# Para realizar um saque, primeiro cadastre um Cliente
-# Cadastro de conta
+# Priemira ação deve ser cadastrar um Cliente
+# Segunda ação deve ser criar uma conta para o novo Cliente 
+# Pronto, o usuario está pronto para usar as fuibnções do sistema 
 # Cadastro de usuario - Necessário: Nome, Data de Nascimento, CPF e Endereço
 # Cadastro de 2 usuários com o mesmo CPF
 # Permitido depositar valores diversos
